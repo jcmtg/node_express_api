@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "jvd",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jcmtg/node_express_api/issues"
   },
