@@ -8,3 +8,5 @@ const PORT = 5000;
 app.use(express.json()); //use express's body-parser
 
 app.listen(PORT, () => console.log(`server running on port: http://localhost:${PORT}`));  //ctrl+c to stop the server (in terminal)
+
+//ran node install --save-dev nodeMon, this only puts it locally.
