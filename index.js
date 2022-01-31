@@ -8,11 +8,9 @@ const PORT = 5000;
 app.use(express.json()); //use express's body-parser
 
 //first route
-app.get('/', (req, res) => {
-	console.log('[TEST]!');
-	res.send('Hello from homepage.');
+app.get('/', (req, res) => res.send('Hello from homepage.')); //GET request to the root/hoempage., 2nd param is the callback func
 
-}); //GET request to the root/hoempage., 2nd param is the callback func
+
 
 app.listen(PORT, () => console.log(`server running on port: http://localhost:${PORT}`));  //ctrl+c to stop the server (in terminal)
 
