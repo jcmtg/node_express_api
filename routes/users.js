@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 	users.push(user)
 
 
-	res.send('post route reach!');
+	res.send(`User with the name ${user.firstName} added to the db.`);
 });
 
 export default router;
