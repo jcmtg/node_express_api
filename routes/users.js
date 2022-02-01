@@ -33,9 +33,11 @@ router.post('/', (req, res) => {
 	res.send(`User with the name ${user.firstName} added to the db.`);
 });
 
-router.get('/id', (req, res) => {
- 
-	res.send("IM IN ID");
+router.get('/:id', (req, res) => {
+	const { id } = req.params;
+console.log(id);
+	const foundUser = users.find((user) => user.id == id);
+	res.send(foundUser);
 });
 
 export default router;
