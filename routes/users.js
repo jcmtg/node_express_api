@@ -24,14 +24,17 @@ router.get('/', (req, res) => {
 	res.send(users);
 });
 
-router.post('/', (req, res) => {
+const createUser = (req, res) => {
 	const user = req.body;
 	const userId = uuidv4();
 	user.id = userId;
 	users.push(user)
 
 	res.send(`User with the name ${user.firstName} added to the db.`);
-});
+};
+
+
+router.post('/', createUser);
 
 router.get('/:id', (req, res) => {
 	const { id } = req.params;
