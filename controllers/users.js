@@ -1,6 +1,21 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export const editUser = (req, res) => {
+let users = [
+	{
+		id:0,
+		firstName:"John",
+		lastName:"Doe",
+		age:25
+	},
+	{
+		id:1,
+		firstName:"Jane",
+		lastName:"Doe",
+		age:23
+	}
+];
+
+export const updateUser = (req, res) => {
 	const { id } = req.params;
 	const { firstName, lastName, age } = req.body;
 	const user = users.find((user) => user.id == id);
