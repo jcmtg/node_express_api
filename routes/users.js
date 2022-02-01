@@ -1,14 +1,17 @@
 import express from 'express';
+import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router(); //init our router. similar to app.get() in index.js
 
 const users = [
 	{
+		id:0,
 		firstName:"John",
 		lastName:"Doe",
 		age:25
 	},
 	{
+		id:1,
 		firstName:"Jane",
 		lastName:"Doe",
 		age:23
@@ -23,11 +26,16 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 	const user = req.body;
-
+	const userId = uuidv4();
+	user.id = userId;
 	users.push(user)
 
-
 	res.send(`User with the name ${user.firstName} added to the db.`);
+});
+
+router.get('/id', (req, res) => {
+ 
+	res.send("IM IN ID");
 });
 
 export default router;
